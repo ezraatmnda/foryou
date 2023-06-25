@@ -1,6 +1,31 @@
-body, html { height: 100%;
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .text {
   font-family: consolas;
+}
+
+.button {
+  font-family: consolas;
+  background-color: black;
+  width: auto;
+  height: auto;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: consolas;
+  text-align: center;
 }
