@@ -4,6 +4,10 @@ body, html {
   padding: 0;
 }
 
+div {
+  font-family: consolas;
+}
+
 .text {
   font-family: consolas;
 }
@@ -23,6 +27,16 @@ body, html {
 .header {
   position: fixed;
   top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: consolas;
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   background-color: black;
   color: white;
