@@ -1,28 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+:root {
+  --main: #6dc774;
+  --shadow: #5baf5d;
+  --white: #fcfefc;
+}
+
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-div {
-  font-family: consolas;
-}
-
-.text {
-  font-family: consolas;
-  text-align: center;
-}
-
-.button {
-  font-family: consolas;
-  background-color: black;
-  width: auto;
-  height: auto;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center
 }
 
 .header {
@@ -31,7 +25,7 @@ div {
   width: 100%;
   background-color: black;
   color: white;
-  font-family: consolas;
+  font-family: 'VT323';
   text-align: center;
 }
 
@@ -41,6 +35,78 @@ div {
   width: 100%;
   background-color: black;
   color: white;
-  font-family: consolas;
+  font-family: 'VT323';
   text-align: center;
+}
+
+.pushable {
+  background: var(--shadow);
+  font-family: 'VT323';
+  display: block;
+  border: none;
+  padding: 0;
+  font-size: 1.25rem;
+  color: var(--white);
+  transform: translateY(-6px);
+  box-shadow: 5px 3px 0px 0px #bebebe;
+}
+.front {
+  font-family: 'VT323';
+  display: block;
+  padding: 12px 42px;
+  font-size: 1.25rem;
+  background: var(--main);
+  color: var(--white);
+  transform: translateY(-6px);
+  cursor: pointer;
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+}
+
+.front::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: -8px;
+  right: -8px;
+  background: var(--main);
+  z-index: -1;
+}
+
+.front::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  background: var(--main);
+  z-index: -1;
+}
+
+.pushable::before {
+  content: "";
+  top: 8px;
+  bottom: 8px;
+  left: -8px;
+  right: -8px;
+  background: var(--shadow);
+  z-index: -1;
+  position: absolute;
+}
+
+.pushable::after {
+  content: "";
+  top: 4px;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  background: var(--shadow);
+  z-index: -1;
+  position: absolute;
 }
