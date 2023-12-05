@@ -1,36 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <link rel="stylesheet" href="css/home.css">
-  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-<head>
-  <title>uwu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <header class="header">
-      <p>... ... ...</p>
-    </header>
-    <div id="main" class="container">
-      <button class="pushable" onclick="myFunction()">
-        <span class="front">
-          CLICK ME
-        </span>
-      </button>
-    </div>
-    <footer class="footer">
-      <p>Footer...</p>
-    </footer>
-
-    <script>
-      function myFunction() {
-        var resultElement = document.getElementById("result");
-        // Toggle the visibility of the result container
-        if (resultElement.style.display === "none") {
-            resultElement.style.display = "block";
-        } else {
-            resultElement.style.display = "none";
-        }
-      }
-    </script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

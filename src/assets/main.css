@@ -1,0 +1,169 @@
+@import './base.css';
+@font-face {
+  font-family: 'press2p';
+  src: url('./fonts/PressStart2P.ttf') format('truetype');
+}
+
+body {
+  display: flex;
+  place-items: center;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  #app {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    padding: 0 2rem;
+  }
+}
+
+:root {
+  --green: #6dc774;
+  --green-shadow: #5baf5d;
+  --white: #fcfefc;
+  --white-shadow: rgb(216, 216, 216);
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: 'VT323';
+  text-align: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: press2p;
+  text-align: center;
+}
+
+/* PIXELATE BUTTON STYLE */
+.mybutton {
+  background: var(--shadow);
+  font-family: press2p;
+  border: none;
+  padding: 0;
+  font-size: 1.25rem;
+  color: var(--white);
+  transform: translateY(-6px);
+  box-shadow: 5px 3px 0px 0px #bebebe;
+}
+.mybutton::before {
+  content: "";
+  top: 8px;
+  bottom: 8px;
+  left: -8px;
+  right: -8px;
+  background: var(--shadow);
+  z-index: -1;
+  position: absolute;
+}
+.mybutton::after {
+  content: "";
+  top: 4px;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  background: var(--shadow);
+  z-index: -1;
+  position: absolute;
+}
+.front {
+  font-family: press2p;
+  display: block;
+  padding: 21px 42px;
+  font-size: 1.25rem;
+  background: var(--main);
+  color: var(--white);
+  transform: translateY(-6px);
+  cursor: pointer;
+}
+.front::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: -8px;
+  right: -8px;
+  background: var(--main);
+  z-index: -1;
+}
+.front::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  background: var(--main);
+  z-index: -1;
+}
+.mybutton.green:active .front.green,
+.mybutton.white:active .front.white {
+  transform: translateY(-2px);
+}
+
+.mybutton.green,
+.mybutton.green::before,
+.mybutton.green::after {
+  background: var(--green-shadow);
+}
+
+.front.green,
+.front.green::before,
+.front.green::after {
+  background: var(--green);
+  color: var(--white);
+}
+
+.mybutton.white,
+.mybutton.white::after {
+  background: var(--white-shadow);
+  box-shadow: none;
+}
+
+.front.white,
+.front.white::after {
+  background: var(--white);
+  color: #000000;
+  font-size: 12px;
+  padding: 8px 12px;
+}
