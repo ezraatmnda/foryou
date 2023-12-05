@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <button @click="open = true" class="mybutton green">
+    <button @click="openModalWithDelay" class="mybutton green">
       <span class="front green">
         CLICK ME
       </span>
@@ -14,16 +14,25 @@
 
 <script setup>
 import Modal from './views/content/index.vue';
-import { ref } from 'vue'
+</script>
 
-const open = ref(false)
+<script>
+export default {
+  data() {
+    return {
+      open: false,
+    };
+  },
+  methods: {
+    openModalWithDelay() {
+      // Add a delay of 1000 milliseconds (1 second) before opening the modal
+      setTimeout(() => {
+        this.open = true;
+      }, 500);
+    },
+  },
+};
 </script>
 
 <style scoped>
-.modal {
-  position: fixed; /* or absolute, depending on your layout */
-  z-index: 2; /* make sure the modal appears above the button */
-  width: 100%;
-  height: 100%;
-}
 </style>
